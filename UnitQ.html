@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .underCheck{
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="page-wrapper" class="gray-bg">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <h2>TODO Small version</h2>
+                        <small>This is example of small version of todo list</small>
+                        <ul class="todo-list m-t small-list">
+                            <li>
+                                <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
+                                <span class="m-l-xs todo-completed">Buy a milk</span>
+
+                            </li>
+                            <li>
+                                <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
+                                <span class="m-l-xs  todo-completed">Go to shop and find some products.</span>
+
+                            </li>
+                            <li>
+                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
+                                <span class="m-l-xs">Send documents to Mike</span>
+                                <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
+                            </li>
+                            <li>
+                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
+                                <span class="m-l-xs text-success">Pt needs help getting to the bathroom.  Need IV pole, can't find one anywhere.  THere aren't any in the clean or dirty utiulity rooms -  need someone to look in other rooms to find one that isn't being used</span>
+                                <div class="agile-detail">
+                                    <span class="pull-right">93 min</span>
+                                    <i class="underCheck">Dan Morrissey (RN) - 1323</i>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
+                                <span class="m-l-xs">Plan vacation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Jvectormap -->
+    <!--<script src="js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
+
+    <!-- Flot -->
+    <!--<script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>-->
+
+    <script>
+        $(document).ready(function(){
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+        })
+    </script>
+</body>
+</html>

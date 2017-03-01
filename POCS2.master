@@ -1,0 +1,215 @@
+﻿<%@ Master Language="VB" CodeFile="POCS2.master.vb" Inherits="POCS2" EnableViewState="true" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet"/>
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet"/>
+
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+        <script lang="javascript">
+        function openPopup(strOpen, strTitle,w,h)
+        {
+            open(strOpen, strTitle, "status=1, width=" + w + ", height=" + h + ", top=0, left=0");
+        }
+
+     </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+             <div id="wrapper"><%-- WRAPPER --%>
+            <nav class="navbar-default navbar-static-side" role="navigation"><%-- LEFT NAVBAR --%>
+                <div class="sidebar-collapse"><%-- LEFT MENU --%>
+                    <ul class="nav metismenu" id="side-menu"><%-- LEFT MENU ITEMS--%>
+                        <li class="nav-header">
+                            <div class="dropdown profile-element"> <span>
+                                    <img alt="image" class="img-circle" src="img/DanPhoto.JPG" />
+                                     </span>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Dan Morrissey RN</strong>
+                                     </span> <span class="text-muted text-xs block">Solution Architect <b class="caret"></b></span> </span> </a>
+                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="contacts.html">Contacts</a></li>
+                                    <li><a href="mailbox.html">Mailbox</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="login.html">Logout</a></li>
+                                </ul>
+                            </div><%-- PROFILE TOP LEFT--%>
+                            <div class="logo-element">
+                                IN+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#Procedures.aspx"><i class="fa fa-check-square"></i> <span class="nav-label">Procedures</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="Procedures.aspx">Browse All</a></li>
+                                <li><a href="TeamQ.aspx">Pulomary</a></li>
+                                <li><a href="Procedures.aspx?c=cv">Cardiovascular</a></li>
+                                <li><a href="MedCon.aspx">Neuro</a></li>
+                                <li><a href="TOC.aspx">Orthopedic</a></li>
+                                <li><a href="Supplies.aspx">Renal</a></li>
+                                <li><a href="TeamQ.aspx">GI</a></li>
+                                <li><a href="TeamQ.aspx">Endocrine</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Procedures.aspx"><i class="fa fa-flask"></i> <span class="nav-label">Drug Admininstration</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="CritCareDrugsShort.aspx">Critical Care Drug Table</a></li>
+                                <li><a href="CritDrugInfusionProtocol.aspx">IV Infusion Protocol</a></li>
+
+                                <li><a onclick="openPopup('DrugCalc.aspx','Dose Calculator',450,500)">Dose Calculator</a></li>
+
+                                <li><a href="DrugContras.aspx">Major Drug Contraindications</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Assessment Tools</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                 <li><a onclick="openPopup('IMG_Algorythms/Hypotension_ALG.png','Hypotension Evaluation',1700,1000)">Hypotension Evaluation</a></li>
+                                 <li><a onclick="openPopup('IMG_Algorythms/RASS.png','RASS',650,200)">RASS Score</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Specimen Collection</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="LabTubes.aspx">Lab Tubes & Tests</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Medical Conditions</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="Procedures.aspx">Browse All</a></li>
+                                <li><a href="TeamQ.aspx">Pulomary</a></li>
+                                <li><a href="Procedures.aspx?c=cv">Cardiovascular</a></li>
+                                <li><a href="MedCon.aspx">Neuro</a></li>
+                                <li><a href="TOC.aspx">Orthopedic</a></li>
+                                <li><a href="Supplies.aspx">Renal</a></li>
+                                <li><a href="TeamQ.aspx">GI</a></li>
+                                <li><a href="TeamQ.aspx">Endocrine</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#DocInterval.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Unit Specific</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="UnitCHarting.aspx">Unit Charting</a></li>
+                                <li><a href="UnitProfile.aspx">Unit Profiles</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#DocInterval.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Feedback</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                 <li><a onclick="openPopup('AppFeedback.aspx?f=POCS2.aspx','Feedback',900,450)">Submit Feedback</a></li>
+                                 <li><a onclick="openPopup('AppIdeas.aspx','New Idea',450,600)">Submit Concepts</a></li>
+                                 <li><a onclick="openPopup('AppGetInfo.aspx','Get Info',450,600)">Needed Info</a></li>
+                                <li><a href="AppGetInfoList.aspx">Needed Info</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="TOC.aspx"><i class="fa fa-paper-plane"></i> <span class="nav-label">Transfer of Car</span><span class="label label-warning pull-right">16/24</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="Supplies.aspx"><i class="fa fa-search"></i> <span class="nav-label">Supply Locator</span>  </a>
+                        </li>
+                        <li>
+                            <a href="TeamQ.aspx"><i class="fa fa-flask"></i> <span class="nav-label">Team Queue</span></a>
+                        </li>
+                        <li class="special_link">
+                            <a href="UnitPtDash.aspx"><i class="fa fa-database"></i> <span class="nav-label">Unit Dashboard</span></a>
+                        </li>
+                    </ul><%-- /LEFT MENU ITEMS--%>
+                </div><%-- /LEFT MENU --%>
+            </nav><%-- /LEFT NAVBAR --%>
+                <nav id="page-wrapper" class="gray-bg"><%-- PAGE WRAPPER --%>
+                    <div class="row border-bottom">
+                        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0"><%-- POCS PAGE HEADER --%>
+                            <div class="navbar-header"> <%-- POCS PAGE TITLE --%>
+                                <h1><span class="text-navy"><strong>&nbsp;&nbsp;&nbsp;Point of Care Support</strong></span></h1>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblErr" runat="server" Text="" ForeColor="Red" Font-Bold="True"></asp:Label>          
+                            </div><%-- /POCS PAGE TITLE --%>
+
+                        </nav><%-- /POCS PAGE HEADER --%>
+                    </div>
+                    <div class="wrapper wrapper-content"><%-- ? --%>
+                        <div class="row">
+                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+
+
+                         </div>
+                            <div class="footer"><%-- SEARCH PAGE FOOTER --%>
+                                <div class="pull-right">
+                                    10GB of <strong>250GB</strong> Free.
+                                </div>
+                                <div>
+                                    <strong>Copyright</strong> Dan Morrissey &copy; 2017-2020
+                                </div>
+                            </div><%-- SEARCH PAGE FOOTER --%>
+
+                    </div><%-- /? --%>
+                </nav><%-- /PAGE WRAPPER --%>
+            </div>     
+                                <div class="modal inmodal" id="modalFeedback" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content animated flipInY">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <h4 class="modal-title">
+                                                <asp:Label ID="lblModalTitle" runat="server" Text="Feedback"></asp:Label></h4>
+                                            <small class="font-bold text-success"><asp:Label ID="lblFeature" runat="server" Text="Feature Title"></asp:Label></small>
+                                        </div>
+
+
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                                    <div class="form-group"><label>Subject</label> <asp:TextBox ID="txtSubject" runat="server" placeholder="Subject" class="form-control" EnableViewState="False"></asp:TextBox></div>
+                                    <div class="form-group"><label class="col-sm-3 control-label">Feedback Type</label>
+                                    <div class="col-sm-9">
+                                        <div class="i-checks"><label> <asp:CheckBox ID="cbAppErr" class="i-checks" runat="server" /> <i></i> App Error </label></div>
+                                        <div class="i-checks"><label> <asp:CheckBox ID="cbCOntErr" class="i-checks" runat="server" /> <i></i> Incorrect Info </label></div>
+                                        <div class="i-checks"><label> <asp:CheckBox ID="cbSug" class="i-checks" runat="server" /> <i></i> Suggestion </label></div>
+                                    </div>
+                                </div>
+                                    <div><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                        
+                                    </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-left">
+                                    <label>Details</label> <asp:TextBox ID="txtDetails" runat="server" placeholder="Feedback details" class="form-control" TextMode="MultiLine" Height="250" EnableViewState="False"></asp:TextBox>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+<%--                                            <button type="button" class="btn btn-primary">Save changes</button>--%>
+                                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+      
+
+    </form>
+</body>
+</html>

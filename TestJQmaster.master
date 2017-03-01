@@ -1,0 +1,153 @@
+﻿<%@ Master Language="VB" CodeFile="TestJQmaster.master.vb" Inherits="TestJQmaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>Point of Care Support | Test JQ Header</title>
+
+    <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet"/>
+        <%-- https://datatables.net/ --%>
+        <%-- https://datatables.net/examples/basic_init/scroll_y.html --%>
+    <link href="css/style.css" rel="stylesheet"/>
+<%--               <asp:ScriptReference Path="js/jquery-2.1.1.js" />--%>
+
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" LoadScriptsBeforeUI="True">
+      <Scripts>
+      </Scripts>
+    </asp:ScriptManager>
+    <div id="wrapper"><%-- WRAPPER --%>
+    <nav class="navbar-default navbar-static-side" role="navigation"><%-- LEFT NAVBAR --%>
+        <div class="sidebar-collapse"><%-- LEFT MENU --%>
+            <ul class="nav metismenu" id="side-menu"><%-- LEFT MENU ITEMS--%>
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/DanPhoto.JPG" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Dan Morrissey RN</strong>
+                             </span> <span class="text-muted text-xs block">Solution Architect <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div><%-- PROFILE TOP LEFT--%>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#Procedures.aspx"><i class="fa fa-check-square"></i> <span class="nav-label">Procedures</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="Procedures.aspx">Browse All</a></li>
+                        <li><a href="TeamQ.aspx">Pulomary</a></li>
+                        <li><a href="Procedures.aspx?c=cv">Cardiovascular</a></li>
+                        <li><a href="MedCon.aspx">Neuro</a></li>
+                        <li><a href="TOC.aspx">Orthopedic</a></li>
+                        <li><a href="Supplies.aspx">Renal</a></li>
+                        <li><a href="TeamQ.aspx">GI</a></li>
+                        <li><a href="TeamQ.aspx">Endocrine</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Procedures.aspx"><i class="fa fa-flask"></i> <span class="nav-label">Drug Admininstration</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="CritCareDrugsShort.aspx">Critical Care Drug Table</a></li>
+                        <li><a href="CritDrugsProtocol.aspx">IV Inffusion Protocol</a></li>
+
+                        <li><a onclick="openPopup('DrugCalc.aspx','Dose Calculator',450,500)">Dose Calculator</a></li>
+
+                        <li><a href="DrugContras.aspx">Major Drug Contraindications</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Assessment Tools</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                         <li><a onclick="openPopup('IMG_Algorythms/Hypotension_ALG.png','Hypotension Evaluation',1700,1000)">Hypotension Evaluation</a></li>
+                         <li><a onclick="openPopup('IMG_Algorythms/RASS.png','RASS',650,200)">RASS Score</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Specimen Collection</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="LabTubes.aspx">Lab Tubes & Tests</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#MedCond.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Medical Conditions</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="Procedures.aspx">Browse All</a></li>
+                        <li><a href="TeamQ.aspx">Pulomary</a></li>
+                        <li><a href="Procedures.aspx?c=cv">Cardiovascular</a></li>
+                        <li><a href="MedCon.aspx">Neuro</a></li>
+                        <li><a href="TOC.aspx">Orthopedic</a></li>
+                        <li><a href="Supplies.aspx">Renal</a></li>
+                        <li><a href="TeamQ.aspx">GI</a></li>
+                        <li><a href="TeamQ.aspx">Endocrine</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#DocInterval.aspx"><i class="fa fa-plus-circle"></i> <span class="nav-label">Unit Specific</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="UnitCharting.aspx">Unit Charting</a></li>
+                        <li><a href="UnitProfile.aspx">Unit Profiles</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="TOC.aspx"><i class="fa fa-paper-plane"></i> <span class="nav-label">Transfer of Car</span><span class="label label-warning pull-right">16/24</span></a>
+                </li>
+                <li class="active">
+                    <a href="Supplies.aspx"><i class="fa fa-search"></i> <span class="nav-label">Supply Locator</span>  </a>
+                </li>
+                <li>
+                    <a href="TeamQ.aspx"><i class="fa fa-flask"></i> <span class="nav-label">Team Queue</span></a>
+                </li>
+                <li class="special_link">
+                    <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                </li>
+            </ul><%-- /LEFT MENU ITEMS--%>
+        </div><%-- /LEFT MENU --%>
+    </nav><%-- /LEFT NAVBAR --%>
+        <nav id="page-wrapper" class="gray-bg"><%-- PAGE WRAPPER --%>
+             <nav class="row border-bottom"><%-- ROW BORDER BOTTOM --%>
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0"><%-- NAVBAR --%>
+                    <div class="navbar-header"> <%-- CENTER PANE HEADER --%>
+                        <h1><span class="text-navy"><strong>&nbsp;&nbsp;&nbsp;Point of Care Support</strong></span></h1>
+                        <asp:Label ID="lblErr" runat="server" Text="" ForeColor="Red" Font-Bold="True"></asp:Label>
+
+                        <div>
+                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+                        </div>
+
+
+                    </div>
+                </nav>
+             </nav>
+        </nav>
+    </div>
+    </form>
+</body>
+</html>
